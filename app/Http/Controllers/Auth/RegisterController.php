@@ -4,8 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Auth;
+use const false;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use function route;
+use function session;
+use const true;
+use function view;
 
 class RegisterController extends Controller
 {
@@ -40,6 +46,21 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        if (session()->has('xiyoulinux_id'))
+            return view('auth.registerbyxiyou',
+                ['name'=> session()->get('name'),'email' => session()->get('email')]
+            );
+        else
+            return redirect()->route('xiyoulinux');
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -51,6 +72,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            //'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 
@@ -66,6 +88,8 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'xiyoulinux_id' => session('xiyoulinux_id'),
+            'isadmin' => session('isadmin')==1?true:false,
         ]);
     }
 }

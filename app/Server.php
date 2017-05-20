@@ -14,9 +14,21 @@ class Server extends Model
      */
     protected $table = 'servers';
 
+    protected $fillable = [
+        'ip',//ip
+        'remote_socket',
+        'ssl',
+        'name',
+        'status',
+        'user_id',
+        'type',
+        'can_use',
+        'description',
+    ];
+
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','user_id','id');
     }
 
     public function docker()

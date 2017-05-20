@@ -9,15 +9,13 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','xiyoulinux_id','isadmin','xiyoulinux_token'
     ];
 
     /**
@@ -39,12 +37,22 @@ class User extends Authenticatable
         return $this->hasMany('App\Server');
     }
 
+    public function generateUserInstance()
+    {
+        return $this->hasMany('App\SocialiteUser');
+    }
+
+    public function signinlog()
+    {
+        return $this->hasMany('App\SigninLog');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','xiyoulinux_token'
     ];
 }

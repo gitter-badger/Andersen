@@ -11,5 +11,25 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+
+// mix.styles([
+//         'resources/assets/h-ui.css/H-ui.admin.css',
+//         'resources/assets/h-ui.css/H-ui.min.css'
+//     ],'public/css/h-ui.css')
+//     .scripts([
+//         'resources/assets/h-ui.js/jquery.min.js',
+//         'resources/assets/h-ui.js/layer.js',
+//         'resources/assets/h-ui.js/H-ui.min.js',
+//         'resources/assets/h-ui.js/H-ui.admin.js'
+//     ],'public/js/h-ui.main.js')
+//     .scripts([
+//         'resources/assets/h-ui.js/jquery.min.js',
+//         'resources/assets/h-ui.js/layer.js',
+//         'resources/assets/h-ui.js/jquery.validate.js',
+//         'resources/assets/h-ui.js/validate-methods.js',
+//         'resources/assets/h-ui.js/messages_zh.js',
+//         'resources/assets/h-ui.js/H-ui.min.js',
+//         'resources/assets/h-ui.js/H-ui.admin.js'
+//     ],'public/js/h-ui.base.js')
+max.js('resources/assets/js/app.js', 'public/js')
+    .sass('resources/assets/sass/app.scss', 'public/css');

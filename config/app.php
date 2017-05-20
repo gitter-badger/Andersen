@@ -14,6 +14,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'version' => '0.1',
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -64,7 +66,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'PRC',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +169,6 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -185,11 +186,17 @@ return [
          * 验证码解决方案
          */
         //Mews\Captcha\CaptchaServiceProvider::class,
-        Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
         /**
          * install
          */
         RachidLaasri\LaravelInstaller\Providers\LaravelInstallerServiceProvider::class,
+        /**
+         * oauth client
+         */
+        //Laravel\Socialite\SocialiteServiceProvider::class,
+        Overtrue\LaravelSocialite\ServiceProvider::class,
+
 
 
     ],
@@ -240,10 +247,12 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        //'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Socialite' => Overtrue\LaravelSocialite\Socialite::class,
         //'Captcha' => Mews\Captcha\Facades\Captcha::class,
-        //'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'Captcha' => Arcanedev\NoCaptcha\Facades\NoCaptcha::class,
         'canInstall' => \RachidLaasri\LaravelInstaller\Middleware\canInstall::class,
+
 
     ],
 

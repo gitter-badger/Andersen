@@ -11,7 +11,13 @@ class Docker extends Model
      *
      * @var string
      */
-    protected $table = 'docker';
+    protected $table = 'dockers';
+
+    protected $fillable = [
+        'status','server_url','description','uuid','user_id','application_id','server_id',
+    ];
+
+
 
     public function application()
     {
@@ -27,4 +33,6 @@ class Docker extends Model
     {
         return $this->belongsTo('App\Server');
     }
+
+
 }

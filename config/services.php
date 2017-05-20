@@ -53,4 +53,10 @@ return [
         'redirect'      => env('APP_URL')."/oauth/qq/callback",
     ],
 
+    'google' => [
+        'client_id'     => env('OAUTH_GOOGLE_CLIENTID'),
+        'client_secret' => env('OAUTH_GOOGLE_SECRET'),
+        'redirect'      => env('APP_URL')."/oauth/google/callback",
+    ],
+
 ];
