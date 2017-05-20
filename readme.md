@@ -1,6 +1,8 @@
 Andersen - 自动化部署工具
 ==========================
 
+[![Join the chat at https://gitter.im/Andersen_Im/Lobby](https://badges.gitter.im/Andersen_Im/Lobby.svg)](https://gitter.im/Andersen_Im/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ####西邮Linux兴趣小组CS平台统一部署工具####
 
 基于目前西邮Linux兴趣小组CS平台上层扩展应用开发所使用的开发环境不一致，导致上层应用的统一部署和维护较为困难的情况，开发基于西邮Linux兴趣小组统一授权的自动化统一部署管理平台，它依托于Git版本控制来获得源码，自动化执行统一部署脚本，支持自定义脚本，支持数据库统一管理，实现上层应用的一键部署和维护，减轻开发人员和运维人员的工作负担，提高服务器的管理效率。
